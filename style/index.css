@@ -1,0 +1,112 @@
+/* Variáveis de Cores (Baseadas na Lily do Duolingo) */
+:root {
+    --bg-dark: #1E1B24;
+    --card-bg: #2D283E;
+    --primary-purple: #802BB1;
+    --accent-lilac: #D191FF;
+    --text-main: #E5D9F2;
+    --text-muted: #A093B2;
+    --input-bg: #E0E0E0; /* Cinza claro como no seu rascunho */
+    --feedback-bg: #EBD9FC; /* Lilás bem claro para o box de avaliação */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+header h1 {
+    letter-spacing: -1px;
+    opacity: 0.9;
+}
+
+/* O Card Central */
+.card-analisador {
+    background-color: var(--card-bg);
+    border-radius: 24px; /* Cantos arredondados modernos */
+    width: 100%;
+    max-width: 450px;
+    max-height: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Estilização do Input */
+.form-label {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(128, 43, 177, 0.25);
+}
+
+#toggle-password{
+    background-color: var(--input-bg); 
+    border: none; 
+    border-radius: 0 12px 12px 0;
+}
+
+/* Box de Avaliação (O destaque do seu design) */
+.feedback-container {
+    background-color: var(--feedback-bg);
+    min-height: 100px;
+    border-radius: 16px;
+    border: 2px dashed rgba(128, 43, 177, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.feedback-text {
+    color: #4A148C; /* Roxo escuro para contraste no fundo claro */
+    font-weight: 600;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Rodapé */
+footer .text-muted {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.feedback-link{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: var(--feedback-bg);
+    border: 1px solid var(--feedback-bg);
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+/* Ajuste Mobile (Já coberto pelo Bootstrap, mas para fine-tuning) */
+@media (max-width: 576px) {
+    .card-analisador {
+        padding: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .feedback-link{
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
