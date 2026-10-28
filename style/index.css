@@ -23,13 +23,62 @@ header h1 {
 }
 
 /* O Card Central */
-.card-analisador {
+.card-action {
     background-color: var(--card-bg);
     border-radius: 24px; /* Cantos arredondados modernos */
     width: 100%;
     max-width: 450px;
-    max-height: 600px;
+    max-height: 650px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-generator, .info-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+/* Display da Senha */
+.password-box {
+    background-color: #D1D5DB; /* Cor cinza do seu rascunho */
+    color: #111827;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    word-wrap: break-word;
+}
+
+.password-box:hover {
+    background-color: #E5E7EB;
+    transform: translateY(-2px);
+}
+
+/* Botão Gerar */
+.btn-gerar {
+    background-color: var(--primary-purple);
+    color: #E5E7EB;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.btn-gerar:hover {
+    background-color: var(--primary-purple);
+    filter: brightness(1.1);
+}
+
+/* Estilo dos Toggles */
+.form-check-input:checked {
+    background-color: var(--accent-lilac);
+    border-color: var(--accent-lilac);
+}
+
+/* Toast Custom */
+.toast {
+    background-color: var(--accent-lilac);
 }
 
 /* Estilização do Input */
@@ -66,6 +115,7 @@ header h1 {
     border-radius: 16px;
     border: 2px dashed rgba(128, 43, 177, 0.2);
     transition: transform 0.2s ease;
+    margin-bottom: 24px;
 }
 
 .feedback-text {
@@ -76,9 +126,10 @@ header h1 {
 }
 
 /* Rodapé */
-footer .text-muted {
+footer .txt-muted {
     font-size: 0.75rem;
     letter-spacing: 0.5px;
+    color: #fff;
 }
 
 .feedback-link{
