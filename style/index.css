@@ -148,16 +148,9 @@ footer .txt-muted {
 }
 
 /* Ajuste Mobile (Já coberto pelo Bootstrap, mas para fine-tuning) */
-@media (max-width: 576px) {
-    .card-analisador {
-        padding: 2rem !important;
-    }
-}
-
-@media screen and (max-width: 450px){
-    .feedback-link{
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
+@media (max-width: 700px) {
+    #app-content {
+        flex-direction: column;
+        align-items: center;
     }
 }
