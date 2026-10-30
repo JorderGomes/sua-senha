@@ -1,18 +1,31 @@
 /* Variáveis de Cores (Baseadas na Lily do Duolingo) */
 :root {
-    --bg-dark: #1E1B24;
-    --card-bg: #2D283E;
-    --primary-purple: #802BB1;
-    --accent-lilac: #D191FF;
-    --text-main: #E5D9F2;
-    --text-muted: #A093B2;
-    --input-bg: #E0E0E0; /* Cinza claro como no seu rascunho */
-    --feedback-bg: #EBD9FC; /* Lilás bem claro para o box de avaliação */
+    /* Fundos e superfices */
+    --bg-body: #1E1B24;
+    --bg-surface: #2D283E;
+    --bg-input: #E0E0E0; 
+
+    /* Cores de marca e ação */
+    --color-primary: #802BB1;
+    --color-accent: #D191FF;
+    --color-emphasis: #4A148C;
+    --feedback-bg: #EBD9FC;
+
+    /* Tipografia */
+    --text-primary: #E5D9F2;
+    --text-secondary: #A093B2;
+    --text-inverse: #111827;
+    --text--on-primary: #E5E7EB;
+
+    /* Bordas e efeitos */
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --shadow-focus: rgba(128, 43, 177, 0.25);
+    --color-white: #fff;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     font-family: 'Inter', sans-serif;
 }
 
@@ -24,24 +37,24 @@ header h1 {
 
 /* O Card Central */
 .card-action {
-    background-color: var(--card-bg);
+    background-color: var(--bg-surface);
     border-radius: 24px; /* Cantos arredondados modernos */
     width: 100%;
     max-width: 450px;
     max-height: 650px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
 }
 
 .card-generator, .info-card {
-    background-color: var(--card-bg);
+    background-color: var(--bg-surface);
     border-radius: 16px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
 }
 
 /* Display da Senha */
 .password-box {
-    background-color: #D1D5DB; /* Cor cinza do seu rascunho */
-    color: #111827;
+    background-color: var(--bg-input); /* Cor cinza do seu rascunho */
+    color: var(--text-inverse);
     padding: 15px;
     border-radius: 8px;
     font-family: 'JetBrains Mono', monospace;
@@ -52,44 +65,44 @@ header h1 {
 }
 
 .password-box:hover {
-    background-color: #E5E7EB;
+    background-color: var(--text--on-primary);
     transform: translateY(-2px);
 }
 
 /* Botão Gerar */
 .btn-gerar {
-    background-color: var(--primary-purple);
-    color: #E5E7EB;
+    background-color: var(--color-primary);
+    color: var(--text--on-primary);
     border: none;
     padding: 12px;
     border-radius: 8px;
 }
 
 .btn-gerar:hover {
-    background-color: var(--primary-purple);
+    background-color: var(--color-primary);
     filter: brightness(1.1);
 }
 
 /* Estilo dos Toggles */
 .form-check-input:checked {
-    background-color: var(--accent-lilac);
-    border-color: var(--accent-lilac);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 /* Toast Custom */
 .toast {
-    background-color: var(--accent-lilac);
+    background-color: var(--color-accent);
 }
 
 /* Estilização do Input */
 .form-label {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.9rem;
 }
 
 .form-control {
-    background-color: var(--input-bg);
+    background-color: var(--bg-input);
     border: none;
     border-radius: 12px;
     padding: 15px;
@@ -98,12 +111,12 @@ header h1 {
 }
 
 .form-control:focus {
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgba(128, 43, 177, 0.25);
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 4px var(--shadow-focus);
 }
 
 #toggle-password{
-    background-color: var(--input-bg); 
+    background-color: var(--bg-input); 
     border: none; 
     border-radius: 0 12px 12px 0;
 }
@@ -113,13 +126,13 @@ header h1 {
     background-color: var(--feedback-bg);
     min-height: 100px;
     border-radius: 16px;
-    border: 2px dashed rgba(128, 43, 177, 0.2);
+    border: 2px dashed var(--shadow-focus);
     transition: transform 0.2s ease;
     margin-bottom: 24px;
 }
 
 .feedback-text {
-    color: #4A148C; /* Roxo escuro para contraste no fundo claro */
+    color: var(--color-emphasis); /* Roxo escuro para contraste no fundo claro */
     font-weight: 600;
     line-height: 1.4;
     font-style: italic;
@@ -127,25 +140,16 @@ header h1 {
 
 /* Rodapé */
 footer .txt-muted {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
-    color: #fff;
+    color: var(--color-white);
 }
 
-.feedback-link{
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    color: var(--feedback-bg);
-    border: 1px solid var(--feedback-bg);
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
+.dev-link{
+    text-decoration: none;
+    color: var(--color-accent);
 }
+
 
 /* Ajuste Mobile (Já coberto pelo Bootstrap, mas para fine-tuning) */
 @media (max-width: 700px) {
